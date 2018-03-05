@@ -42,6 +42,20 @@ services:
       - elasticsearch
     networks: ['stack']
 
+  logstash:
+    image: docker.elastic.co/logstash/logstash:5.6.3
+    container_name: logstash
+    environment:
+      - XPACK_GRAPH_ENABLED=false
+      - XPACK_MONITORING_ENABLED=false
+      - XPACK_REPORTING_ENABLED=false
+      - XPACK_SECURITY_ENABLED=false
+    volumes:
+      - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml
+      - ./logstash/pipeline:/usr/share/logstash/pipeline:ro
+    networks: ['stack']
+    depends_on: ['elasticsearch']
+
 volumes:
     data:
       driver: local
