@@ -1,8 +1,8 @@
 {
   "__inputs": [
     {
-      "name": "DS_ES",
-      "label": "ES",
+      "name": "DS_ELASTICSEARCH",
+      "label": "elasticsearch",
       "description": "",
       "type": "datasource",
       "pluginId": "elasticsearch",
@@ -47,7 +47,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_ES}",
+          "datasource": "${DS_ELASTICSEARCH}",
           "fill": 1,
           "id": 7,
           "interval": ">60s",
@@ -83,7 +83,7 @@
                     "min_doc_count": 0,
                     "order": "asc",
                     "orderBy": "_term",
-                    "size": "10"
+                    "size": "0"
                   },
                   "type": "terms"
                 },
@@ -166,7 +166,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_ES}",
+          "datasource": "${DS_ELASTICSEARCH}",
           "fill": 1,
           "id": 8,
           "interval": ">60s",
@@ -202,7 +202,7 @@
                     "min_doc_count": 0,
                     "order": "asc",
                     "orderBy": "_term",
-                    "size": "10"
+                    "size": "0"
                   },
                   "type": "terms"
                 },
@@ -316,5 +316,5 @@
   },
   "timezone": "browser",
   "title": "Network",
-  "version": 1
+  "version": 2
 }
