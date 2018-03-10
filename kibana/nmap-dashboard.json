@@ -1,0 +1,19 @@
+[
+  {
+    "_id": "AWHxBFVO8EUMwyo3RIgl",
+    "_type": "dashboard",
+    "_source": {
+      "title": "Nmap",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"col\":1,\"id\":\"AWHxA3Hm8EUMwyo3RIgk\",\"panelIndex\":1,\"row\":1,\"size_x\":6,\"size_y\":3,\"type\":\"visualization\"},{\"col\":7,\"id\":\"AWHxAKEt8EUMwyo3RIgj\",\"panelIndex\":2,\"row\":1,\"size_x\":6,\"size_y\":3,\"type\":\"visualization\"},{\"size_x\":6,\"size_y\":3,\"panelIndex\":3,\"type\":\"visualization\",\"id\":\"AWHxD7td8EUMwyo3RIgn\",\"col\":1,\"row\":4}]",
+      "optionsJSON": "{\"darkTheme\":false}",
+      "uiStateJSON": "{\"P-1\":{\"vis\":{\"legendOpen\":false}},\"P-2\":{\"vis\":{\"legendOpen\":true}},\"P-3\":{\"vis\":{\"defaultColors\":{\"0 - 3\":\"rgb(255,245,240)\",\"3 - 5\":\"rgb(252,187,161)\",\"5 - 8\":\"rgb(251,106,74)\",\"8 - 10\":\"rgb(203,24,29)\"}}}}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"type:nmap-scan\"}}}],\"highlightAll\":true,\"version\":true}"
+      }
+    }
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "_id": "AWHxAKEt8EUMwyo3RIgj",
+    "_type": "visualization",
+    "_source": {
+      "title": "open ports",
+      "visState": "{\"title\":\"open ports\",\"type\":\"pie\",\"params\":{\"addLegend\":true,\"addTooltip\":true,\"isDonut\":false,\"legendPosition\":\"right\",\"type\":\"pie\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"result.portid.keyword\",\"size\":100,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"AWHNGeUIJJZ50C3HTVFe\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"type:nmap-scan\"}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "AWHxA3Hm8EUMwyo3RIgk",
+    "_type": "visualization",
+    "_source": {
+      "title": "Open ports by host",
+      "visState": "{\"title\":\"Open ports by host\",\"type\":\"histogram\",\"params\":{\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Count\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"histogram\",\"mode\":\"normal\",\"data\":{\"label\":\"Count\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":true}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false,\"type\":\"histogram\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"host\",\"size\":100,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"AWHNGeUIJJZ50C3HTVFe\",\"query\":{\"query_string\":{\"query\":\"type:nmap-scan\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "AWHxD7td8EUMwyo3RIgn",
+    "_type": "visualization",
+    "_source": {
+      "title": "Open ports through time",
+      "visState": "{\"title\":\"Open ports through time\",\"type\":\"heatmap\",\"params\":{\"addTooltip\":true,\"addLegend\":true,\"enableHover\":false,\"legendPosition\":\"right\",\"times\":[],\"colorsNumber\":4,\"colorSchema\":\"Reds\",\"setColorRange\":false,\"colorsRange\":[],\"invertColors\":false,\"percentageMode\":false,\"valueAxes\":[{\"show\":false,\"id\":\"ValueAxis-1\",\"type\":\"value\",\"scale\":{\"type\":\"linear\",\"defaultYExtents\":false},\"labels\":{\"show\":true,\"rotate\":0,\"color\":\"#555\"}}],\"type\":\"heatmap\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"result.portid.keyword\",\"size\":20,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"timestamp\",\"interval\":\"d\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"defaultColors\":{\"0 - 5\":\"rgb(255,245,240)\",\"5 - 10\":\"rgb(252,187,161)\",\"10 - 15\":\"rgb(251,106,74)\",\"15 - 20\":\"rgb(203,24,29)\"}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"AWHNGeUIJJZ50C3HTVFe\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"type:nmap-scan\"}},\"filter\":[]}"
+      }
+    }
+  }
+]
