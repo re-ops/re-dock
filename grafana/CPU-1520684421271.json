@@ -1,8 +1,8 @@
 {
   "__inputs": [
     {
-      "name": "DS_ES",
-      "label": "ES",
+      "name": "DS_ELASTICSEARCH",
+      "label": "elasticsearch",
       "description": "",
       "type": "datasource",
       "pluginId": "elasticsearch",
@@ -47,7 +47,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_ES}",
+          "datasource": "${DS_ELASTICSEARCH}",
           "fill": 1,
           "id": 1,
           "interval": ">60s",
@@ -83,7 +83,7 @@
                     "min_doc_count": 0,
                     "order": "asc",
                     "orderBy": "_term",
-                    "size": "10"
+                    "size": "0"
                   },
                   "type": "terms"
                 },
@@ -154,7 +154,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_ES}",
+          "datasource": "${DS_ELASTICSEARCH}",
           "fill": 1,
           "id": 2,
           "interval": ">60s",
@@ -190,7 +190,7 @@
                     "min_doc_count": 0,
                     "order": "asc",
                     "orderBy": "_term",
-                    "size": "10"
+                    "size": "0"
                   },
                   "type": "terms"
                 },
@@ -261,7 +261,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_ES}",
+          "datasource": "${DS_ELASTICSEARCH}",
           "fill": 1,
           "id": 3,
           "interval": ">60s",
@@ -297,7 +297,7 @@
                     "min_doc_count": 0,
                     "order": "asc",
                     "orderBy": "_term",
-                    "size": "10"
+                    "size": "0"
                   },
                   "type": "terms"
                 },
@@ -380,7 +380,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_ES}",
+          "datasource": "${DS_ELASTICSEARCH}",
           "fill": 1,
           "id": 9,
           "interval": ">60s",
@@ -416,7 +416,7 @@
                     "min_doc_count": 0,
                     "order": "asc",
                     "orderBy": "_term",
-                    "size": "10"
+                    "size": "0"
                   },
                   "type": "terms"
                 },
@@ -487,7 +487,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_ES}",
+          "datasource": "${DS_ELASTICSEARCH}",
           "fill": 1,
           "id": 10,
           "interval": ">60s",
@@ -523,7 +523,7 @@
                     "min_doc_count": 0,
                     "order": "asc",
                     "orderBy": "_term",
-                    "size": "10"
+                    "size": "0"
                   },
                   "type": "terms"
                 },
@@ -594,7 +594,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_ES}",
+          "datasource": "${DS_ELASTICSEARCH}",
           "fill": 1,
           "id": 11,
           "interval": ">60s",
@@ -630,7 +630,7 @@
                     "min_doc_count": 0,
                     "order": "asc",
                     "orderBy": "_term",
-                    "size": "10"
+                    "size": "0"
                   },
                   "type": "terms"
                 },
@@ -713,7 +713,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_ES}",
+          "datasource": "${DS_ELASTICSEARCH}",
           "fill": 1,
           "id": 12,
           "interval": ">60s",
@@ -749,7 +749,7 @@
                     "min_doc_count": 0,
                     "order": "asc",
                     "orderBy": "_term",
-                    "size": "10"
+                    "size": "0"
                   },
                   "type": "terms"
                 },
@@ -863,5 +863,5 @@
   },
   "timezone": "browser",
   "title": "CPU",
-  "version": 2
+  "version": 8
 }
