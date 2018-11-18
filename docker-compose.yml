@@ -1,7 +1,9 @@
-version: '2'
+version: '3'
+
 services:
   elasticsearch:
-    image: "docker.elastic.co/elasticsearch/elasticsearch:6.4.0"
+    hostname: elasticsearch
+    image: "docker.elastic.co/elasticsearch/elasticsearch-oss:6.4.0"
     container_name: re-dock_elasticsearch
     ports:
       - "9200:9200"
@@ -11,29 +13,19 @@ services:
     environment:
       - ES_JAVA_OPTS=-Xms512m -Xmx512m
       - cluster.name=re-ops
-      - xpack.security.enabled=false
-      - xpack.monitoring.enabled=false
-      - xpack.watcher.enabled=false
-      - xpack.ml.enabled=false
-      - xpack.graph.enabled=false
       - discovery.zen.minimum_master_nodes=1
       - discovery.type=single-node
     networks: ['stack']
 
-
   kibana:
-    image: "docker.elastic.co/kibana/kibana:6.4.0"
+    image: "docker.elastic.co/kibana/kibana-oss:6.4.0"
     container_name: re-dock_kibana
-    environment: ['ELASTICSEARCH_PASSWORD=${ELASTIC_PASSWORD}']
     ports:
-      - "5607:5601"
-    networks: ['stack']
+      - "5601:5601"
     depends_on: ['elasticsearch']
-    environment:
-      - XPACK_GRAPH_ENABLED=false
-      - XPACK_MONITORING_ENABLED=false
-      - XPACK_REPORTING_ENABLED=false
-      - XPACK_SECURITY_ENABLED=false
+    links:
+      - elasticsearch
+    networks: ['stack']
 
   grafana:
     image: "grafana/grafana:5.1.5"
@@ -47,18 +39,13 @@ services:
     networks: ['stack']
 
   logstash:
-    image: "docker.elastic.co/logstash/logstash:6.4.0"
+    image: "docker.elastic.co/logstash/logstash-oss:6.4.0"
     container_name: logstash
-    environment:
-      - XPACK_GRAPH_ENABLED=false
-      - XPACK_MONITORING_ENABLED=false
-      - XPACK_REPORTING_ENABLED=false
-      - XPACK_SECURITY_ENABLED=false
     volumes:
       - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml
       - ./logstash/pipeline:/usr/share/logstash/pipeline:ro
-    networks: ['stack']
     depends_on: ['elasticsearch']
+    networks: ['stack']
 
 volumes:
     data:
