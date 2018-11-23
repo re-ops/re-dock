@@ -15,6 +15,7 @@ services:
       - cluster.name=re-ops
       - discovery.zen.minimum_master_nodes=1
       - discovery.type=single-node
+      - path.repo=/usr/share/elasticsearch/data/
     networks: ['stack']
 
   kibana:
