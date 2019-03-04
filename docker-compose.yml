@@ -8,8 +8,6 @@ services:
     ports:
       - "9200:9200"
       - "9300:9300"
-    volumes:
-       - data:/usr/share/elasticsearch/data
     environment:
       - ES_JAVA_OPTS=-Xms512m -Xmx512m
       - cluster.name=re-ops
@@ -47,13 +45,5 @@ services:
       - ./logstash/pipeline:/usr/share/logstash/pipeline:ro
     depends_on: ['elasticsearch']
     networks: ['stack']
-
-volumes:
-    data:
-      driver: local
-      driver_opts:
-        type: 'none'
-        o: 'bind'
-        device: '/datastore/elastic-docker'
 
 networks: {stack: {}}
