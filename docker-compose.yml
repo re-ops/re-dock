@@ -3,7 +3,7 @@ version: '3'
 services:
   elasticsearch:
     hostname: elasticsearch
-    image: "docker.elastic.co/elasticsearch/elasticsearch-oss:6.8.0"
+    image: "docker.elastic.co/elasticsearch/elasticsearch-oss:7.8.0"
     container_name: re-dock_elasticsearch
     ports:
       - "127.0.0.1:9200:9200"
@@ -17,20 +17,20 @@ services:
     networks: ['stack']
 
   kibana:
-    image: "docker.elastic.co/kibana/kibana-oss:6.8.0"
+    image: "docker.elastic.co/kibana/kibana-oss:7.8.0"
     container_name: re-dock_kibana
     ports:
-      - "5601:5601"
+      - "127.0.0.0:5601:5601"
     depends_on: ['elasticsearch']
     links:
       - elasticsearch
     networks: ['stack']
 
   grafana:
-    image: "grafana/grafana:5.1.5"
+    image: "grafana/grafana:7.0.3"
     container_name: re-dock_grafana
     ports:
-      - "3000:3000"
+      - "127.0.0.1:3000:3000"
     env_file:
       - './grafana/env.grafana'
     links:
@@ -38,8 +38,8 @@ services:
     networks: ['stack']
 
   logstash:
-    image: "docker.elastic.co/logstash/logstash-oss:6.8.0"
-    container_name: logstash
+    image: "docker.elastic.co/logstash/logstash-oss:7.8.0"
+    container_name: re-dock_logstash
     volumes:
       - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml
       - ./logstash/pipeline:/usr/share/logstash/pipeline:ro
