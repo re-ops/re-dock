@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  elasticsearch:
+    hostname: elasticsearch
+    image: "docker.elastic.co/elasticsearch/elasticsearch-oss:7.8.0"
+    container_name: re-dock_elasticsearch
+    ports:
+      - "127.0.0.1:9200:9200"
+      - "127.0.0.1:9300:9300"
+    environment:
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+      - cluster.name=re-ops
+      - discovery.zen.minimum_master_nodes=1
+      - discovery.type=single-node
+      - path.repo=/usr/share/elasticsearch/data/
+
