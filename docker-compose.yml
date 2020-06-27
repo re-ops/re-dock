@@ -15,6 +15,8 @@ services:
       - discovery.type=single-node
       - path.repo=/usr/share/elasticsearch/data/
     networks: ['stack']
+    volumes:
+      - /var/data/:/usr/share/elasticsearch/data
 
   kibana:
     image: "docker.elastic.co/kibana/kibana-oss:7.8.0"

@@ -14,4 +14,5 @@ services:
       - discovery.zen.minimum_master_nodes=1
       - discovery.type=single-node
       - path.repo=/usr/share/elasticsearch/data/
-
+    volumes:
+      - /var/data/:/usr/share/elasticsearch/data
