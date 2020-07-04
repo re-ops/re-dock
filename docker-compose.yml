@@ -16,7 +16,7 @@ services:
       - path.repo=/usr/share/elasticsearch/data/
     networks: ['stack']
     volumes:
-      - /var/data/:/usr/share/elasticsearch/data
+      - /var/data/elasticsearch:/usr/share/elasticsearch/data
 
   kibana:
     image: "docker.elastic.co/kibana/kibana-oss:7.8.0"
@@ -38,6 +38,9 @@ services:
     links:
       - elasticsearch
     networks: ['stack']
+    volumes:
+      - /var/data/grafana:/var/lib/grafana
+
 
   logstash:
     image: "docker.elastic.co/logstash/logstash-oss:7.8.0"
