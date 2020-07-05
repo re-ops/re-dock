@@ -1005,6 +1005,46 @@
           ],
           "refId": "B",
           "timeField": "timestamp"
+        },
+        {
+          "bucketAggs": [
+            {
+              "$$hashKey": "object:158",
+              "fake": true,
+              "field": "host",
+              "id": "3",
+              "settings": {
+                "min_doc_count": 0,
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "10"
+              },
+              "type": "terms"
+            },
+            {
+              "$$hashKey": "object:142",
+              "field": "timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": 0,
+                "trimEdges": 0
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "metrics": [
+            {
+              "$$hashKey": "object:140",
+              "field": "stats.sensor.armv7.input",
+              "id": "1",
+              "meta": {},
+              "settings": {},
+              "type": "avg"
+            }
+          ],
+          "refId": "C",
+          "timeField": "timestamp"
         }
       ],
       "thresholds": [],
@@ -1088,5 +1128,5 @@
   "timezone": "browser",
   "title": "CPU",
   "uid": "iw7mBoMMk",
-  "version": 5
+  "version": 8
 }
