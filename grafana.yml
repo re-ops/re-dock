@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  elasticsearch:
+    hostname: elasticsearch
+    image: "docker.elastic.co/elasticsearch/elasticsearch:7.8.0"
+    container_name: re-dock_elasticsearch
+    ports:
+      - "127.0.0.1:9200:9200"
+      - "127.0.0.1:9300:9300"
+    environment:
+      - ES_JAVA_OPTS=-Xms512m -Xmx2048m
+      - cluster.name=re-ops
+      - discovery.zen.minimum_master_nodes=1
+      - discovery.type=single-node
+      - path.repo=/usr/share/elasticsearch/data/
+      - xpack.security.enabled=true
+      - ELASTIC_PASSWORD=$ELASTIC_PASSWORD
+    networks: ['stack']
+    volumes:
+      - /var/data/elasticsearch:/usr/share/elasticsearch/data
+
+   grafana:
+    image: "grafana/grafana:7.0.3"
+    container_name: re-dock_grafana
+    ports:
+      - "127.0.0.1:3000:3000"
+    env_file:
+      - './grafana/env.grafana'
+    links:
+      - elasticsearch
+    networks: ['stack']
+    volumes:
+      - /var/data/grafana:/var/lib/grafana
+
+ networks: {stack: {}}
