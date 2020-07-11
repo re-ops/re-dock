@@ -33,4 +33,4 @@ services:
     volumes:
        - /var/data/grafana:/var/lib/grafana
 
- networks: {stack: {}}
+networks: {stack: {}}
