@@ -20,17 +20,17 @@ services:
     volumes:
       - /var/data/elasticsearch:/usr/share/elasticsearch/data
 
-   grafana:
+  grafana:
     image: "grafana/grafana:7.0.3"
     container_name: re-dock_grafana
     ports:
-      - "127.0.0.1:3000:3000"
+       - "127.0.0.1:3000:3000"
     env_file:
-      - './grafana/env.grafana'
+       - './grafana/env.grafana'
     links:
-      - elasticsearch
+       - elasticsearch
     networks: ['stack']
     volumes:
-      - /var/data/grafana:/var/lib/grafana
+       - /var/data/grafana:/var/lib/grafana
 
  networks: {stack: {}}
