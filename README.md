@@ -1,13 +1,43 @@
 # Intro
 
-Common docker-compose setup for re-ops projects, it includes Elasticsearch, Kibana and Grafana.
+Common docker-compose setup for re-ops projects, it includes:
 
-# Get running
+  * Elasticsearch
+  * Kibana
+  * Logstash
+  * Grafana
+  * Mosquitto (for re-thing)
+
+
+Different stack can be enabled for different use cases.
+
+# Usage
+
+To setup up an entire ELK stack:
 
 ```bash
-$ git clone git@github.com:re-ops/re-dock.git
-$ cd re-dock
 $ sudo docker-compose up
+```
+
+To setup up Grafana and Elasticsearch:
+
+```bash
+$ sudo docker-compose up -f grafana.yml
+```
+
+To setup up only Elasticsearch:
+
+```bash
+$ sudo docker-compose up -f elasticsearch.yml
+```
+
+To setup up mosquitto
+
+```bash
+# Generate passwd file
+$ docker run -it -v `pwd`/scripts/:/tmp/scripts eclipse-mosquitto /tmp/scripts/passwd.sh
+# Run the service
+$ docker run -it -p 1883:1883 -p 9001:9001 eclipse-mosquitto
 ```
 
 # Copyright and license
