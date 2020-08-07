@@ -15,4 +15,4 @@ services:
       - discovery.type=single-node
       - path.repo=/usr/share/elasticsearch/data/
     volumes:
-      - /var/data/:/usr/share/elasticsearch/data
+      - /var/local/data/:/usr/share/elasticsearch/data
