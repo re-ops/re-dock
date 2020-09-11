@@ -18,7 +18,7 @@ services:
       - ELASTIC_PASSWORD=$ELASTIC_PASSWORD
     networks: ['stack']
     volumes:
-      - /var/local/data/elasticsearch:/usr/share/elasticsearch/data
+      - /var/data/elasticsearch:/usr/share/elasticsearch/data
 
   grafana:
     image: "grafana/grafana:7.0.3"
@@ -31,6 +31,6 @@ services:
        - elasticsearch
     networks: ['stack']
     volumes:
-       - /var/local/data/grafana:/var/lib/grafana
+       - /var/data/grafana:/var/lib/grafana
 
 networks: {stack: {}}

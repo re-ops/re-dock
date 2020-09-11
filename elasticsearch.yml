@@ -17,4 +17,4 @@ services:
       - xpack.security.enabled=true
       - ELASTIC_PASSWORD=$ELASTIC_PASSWORD
     volumes:
-      - /var/local/data/elasticsearch:/usr/share/elasticsearch/data
+      - /var/data/elasticsearch:/usr/share/elasticsearch/data
