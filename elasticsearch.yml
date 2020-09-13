@@ -16,5 +16,14 @@ services:
       - path.repo=/usr/share/elasticsearch/data/
       - xpack.security.enabled=true
       - ELASTIC_PASSWORD=$ELASTIC_PASSWORD
+      - bootstrap.memory_lock=true
+    ulimits:
+      nproc: 65535
+      memlock:
+        soft: -1
+        hard: -1
+       nofile:
+        soft: 65536
+        hard: 65536
     volumes:
       - /var/data/elasticsearch:/usr/share/elasticsearch/data
