@@ -17,6 +17,7 @@ services:
       - xpack.security.enabled=true
       - ELASTIC_PASSWORD=$ELASTIC_PASSWORD
       - bootstrap.memory_lock=true
+      - search.max_buckets=250000
     ulimits:
       nproc: 65535
       memlock:
