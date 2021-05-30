@@ -3,16 +3,14 @@ services:
   influxdb:
     image: quay.io/influxdb/influxdb:v2.0.3
     volumes:
-      - influxdbv2:/.influxdbv2
+      - influxdbv2:/var/local/data
     ports:
       - "127.0.0.1:8086:8086"
   influxdb_cli:
     links:
       - influxdb
     image: quay.io/influxdb/influxdb:v2.0.3
-    entrypoint: influx setup --bucket $BUCKET -o $ORG --username $USERNAME --password passwordpasswordpassword --host=http://influxdb:8086 -f
+    entrypoint: influx setup --bucket $BUCKET -o $ORG --username $USERNAME --password $PASSWORD --host=http://influxdb:8086 -f
     restart: on-failure:10
     depends_on:
       - influxdb
-volumes:
-  influxdbv2:
