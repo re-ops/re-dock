@@ -3,7 +3,7 @@ services:
   influxdb:
     image: quay.io/influxdb/influxdb:v2.0.3
     volumes:
-      - influxdbv2:/var/local/data
+      - /var/local/data:/.influxdbv2
     ports:
       - "127.0.0.1:8086:8086"
   influxdb_cli:
