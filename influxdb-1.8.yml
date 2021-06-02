@@ -1,0 +1,17 @@
+version: '3'
+services:
+  influxdb:
+    image: influxdb:1.8
+    environment:
+      - INFLUXDB_ADMIN_ENABLED=true
+      - INFLUXDB_ADMIN_USER=admin
+      - INFLUXDB_ADMIN_PASSWORD=$ADMIN_PASSWORD
+      - INFLUXDB_DB=$DB
+      - INFLUXDB_HTTP_LOG_ENABLED=false
+      - INFLUXDB_REPORTING_DISABLED=true
+      - INFLUXDB_USER=$USERNAME
+      - INFLUXDB_USER_PASSWORD=$USER_PASSWORD
+    volumes:
+      - /var/local/data:/var/lib/influxdb
+    ports:
+      - "127.0.0.1:8086:8086"
